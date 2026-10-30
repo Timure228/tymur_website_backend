@@ -1,11 +1,8 @@
-const { Pool } = require("pg");
-require("dotenv").config();
+const Database = require("better-sqlite3");
+const path = require("path");
 
-const pool = new Pool({
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    database: process.env.DB_NAME,
-    user: process.env.DB_USER
-});
+const db = new Database(
+    path.join(__dirname, "../feedback.db")
+);
 
-module.exports = pool;
+module.exports = db;

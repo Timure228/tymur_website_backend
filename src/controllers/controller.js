@@ -1,4 +1,4 @@
-const feedbackService = require("../services/feedbackService");
+const feedbackService = require("../services/service.js");
 
 function createFeedback(req, res) {
     try {

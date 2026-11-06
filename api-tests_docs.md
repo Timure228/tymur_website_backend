@@ -43,4 +43,17 @@ body: {
 
 ## Falscher Datentyp
 
-JSON enthält falsche Datentypen
+JSON enthält falsche Datentypen. POST-Request an http://localhost:3000/api/feedback
+
+body: {
+  "name": "12345",
+  "email": "true@gmam.d",
+  "message": 134,
+  "created_at": "kein-datum"
+}
+
+## HTTP Statuscodes
+
+Schickt einen leeren Body. POST-Request an http://localhost:3000/api/feedback
+
+body: {}

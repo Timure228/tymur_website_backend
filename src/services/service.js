@@ -24,4 +24,8 @@ function createFeedback({ name, email, message }) {
     return feedbackRepository.create({ name, email, message });
 }
 
-module.exports = { createFeedback };
+function getAllFeedback() {
+    return feedbackRepository.findAll();
+}
+
+module.exports = { createFeedback, getAllFeedback };

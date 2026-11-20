@@ -13,4 +13,14 @@ function createFeedback(req, res) {
     }
 }
 
-module.exports = { createFeedback };
+function getAllFeedback(req, res) {
+    try {
+        feedbackService.getAllFeedback();
+        res.status(200);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Database error" });
+    }
+}
+
+module.exports = { createFeedback, getAllFeedback };

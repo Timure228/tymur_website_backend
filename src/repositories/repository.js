@@ -7,4 +7,13 @@ function create({ name, email, message }) {
     `).run(name, email, message);
 }
 
-module.exports = { create };
+function findAll() {
+    return db.prepare(
+        `
+        SELECT id, name, email, message, created_at
+        FROM feedback
+        ORDER BY created_at DESC
+    `).all()
+}
+
+module.exports = { create, findAll };
